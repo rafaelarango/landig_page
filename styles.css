@@ -1,16 +1,249 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
- }
- 
- body{
-     font-family: 'Open Sans', sans-serif;
- }
- 
- nav {
-     
- }
- 
- 
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+nav {
+    position: fixed;
+    /* Deja estatico nuestro navegador */
+    top: 20px;
+    left: 20px;
+    display: flex;
+    /* Con esta propiedad puedo empezar a mover las cajitas */
+    justify-content: flex-start;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    /* Eliminamos la raya que estaba debajo del link */
+    animation: moverIzquierda 1s ease-out;
+}
+
+.icono {
+    display: block;
+    /* Ahora vamos a agregar una animacion */
+    z-index: 1000000;
+    /* Es una propiedad que nos permite sobre poner al contenedor mas grande */
+}
+
+header {
+    background: #DA4453;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #89216B, #DA4453);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #89216B, #DA4453);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    height: auto;
+    padding: 48px;
+    width: 100%;
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    display: flex;
+    /* por que aplicamos esta propiedad*/
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+}
+
+img {
+    display: block;
+    height: 450px;
+    width: auto;
+    object-fit: cover;
+    /* Definir algunos cambios de las imagenes*/
+    animation: arriba 1s ease-in;
+}
+
+.text {
+    width: 50%;
+    color: #fff;
+}
+
+.text h1 {
+    font-size: 80px;
+    animation: moverDerecha 1s ease-in;
+}
+
+.text h2 {
+    font-size: 30px;
+    /* animacion */
+}
+
+.text a {
+    display: inline-block;
+    color: #fff;
+    font-weight: 300;
+    margin-top: 30px;
+    text-decoration: none;
+    margin-top: 30px;
+    border: 1px solid #fff;
+    width: 150px;
+    border-radius: 3px;
+    text-align: center;
+    padding: 10px 0;
+    animation: arriba 1s ease-in;
+}
+
+/* Vamos a hacer la ola. pagina SMOOTH.IE*/
+
+.wave {
+    height: 100%;
+    width: 100%;
+
+    background: #DA4453;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #89216B, #DA4453);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #89216B, #DA4453);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.enlaces {
+    position: fixed;
+    display: flex;
+    top: 0;
+    background: black;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    right: 0;
+    flex-direction: column;
+    width: 100%;
+    transition: all 1s ease;
+
+    background: #DA4453;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #89216B, #DA4453);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #89216B, #DA4453);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.uno {}
+
+.dos {}
+
+@keyframes moverIzquierda {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moverDerecha {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes arriba {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Querys */
+
+@media screen and (max-width:1000px) {
+    img {
+        height: 400px;
+    }
+
+}
+
+
+@media screen and (max-width:800px) {
+    img {
+        height: 370px;
+    }
+
+    .text h1 {
+        font-size: 70px;
+    }
+
+    .text h2 {
+        font-size: 25px;
+    }
+
+}
+
+
+@media screen and (max-width:700px) {
+    img {
+        height: 250px;
+    }
+
+    .text h1 {
+        font-size: 40px;
+    }
+
+    .text h2 {
+        font-size: 15px;
+    }
+
+}
+
+@media screen and (max-width:450px) {
+    .container {
+        width: 100%;
+        flex-wrap: wrap-reverse;
+        text-align: center;
+    }
+
+    .text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .text h1 {
+        font-size: 60px;
+    }
+
+}
+
+@media screen and (max-width:340px) {
+    .img {
+        height: 160px;
+    }
+
+    .text h1 {
+        font-size: 35px;
+    }
+
+    .text h2 {
+        font-size: 15px;
+    }
+
+    .text a {
+        width: 120px;
+    }
+
+}
