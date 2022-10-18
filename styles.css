@@ -130,9 +130,13 @@ img {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.uno {}
+.uno {
+    clip-path: circle(0% at 0 0);
+}
 
-.dos {}
+.dos {
+    clip-path: circle(150% at 0 0);
+}
 
 @keyframes moverIzquierda {
     0% {
